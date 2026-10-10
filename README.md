@@ -15,7 +15,9 @@ Production verification:
 pnpm build
 ```
 
-After building, open `dist/index.html` directly by double-clicking it. The complete application bundle and styles are embedded in that one file, so a local server is not required. An internet connection is still needed for product photography hosted by DABAS.
+After building, open the workspace root `index.html` directly by double-clicking it. The build also keeps identical copies in the project root and at `dist/index.html`. The complete application bundle and styles are embedded in the HTML file, so a local server is not required. An internet connection is still needed for product photography hosted by DABAS.
+
+`source.html` is the Vite development entry. Every `pnpm build` automatically compiles it and promotes the standalone result to the root `index.html`.
 
 ## Architecture
 

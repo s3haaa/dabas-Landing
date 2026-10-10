@@ -6,6 +6,7 @@ export default defineConfig({
     plugins: [react(), viteSingleFile()],
     build: {
         cssCodeSplit: false,
-        assetsInlineLimit: 100000000
+        assetsInlineLimit: 100000000,
+        rollupOptions: { input: 'source.html' }
     }
 });
