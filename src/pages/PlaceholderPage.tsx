@@ -1,0 +1,4 @@
+import { ArrowLeft, Wrench } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+
+export default function PlaceholderPage() { const { pathname } = useLocation(); return <main className="page flex min-h-[65vh] items-center justify-center py-16"><div className="max-w-xl text-center"><div className="mx-auto mb-6 w-fit rounded-full bg-brand-50 p-5 text-brand-700"><Wrench className="h-8 w-8"/></div><div className="eyebrow">SLJEDEĆA FAZA</div><h1 className="mt-2 text-4xl font-extrabold tracking-tight">Ova stranica je spremna za razvoj</h1><p className="mt-4 text-muted">Ruta <code className="rounded bg-soft px-2 py-1 text-sm">{pathname}</code> uključena je u skalabilnu navigacijsku arhitekturu. U ovoj fazi potpuno je implementirana početna stranica.</p><Link to="/" className="button-primary mt-7"><ArrowLeft className="h-4 w-4"/> Povratak na početnu</Link></div></main>; }

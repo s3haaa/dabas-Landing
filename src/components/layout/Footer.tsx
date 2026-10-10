@@ -1,0 +1,11 @@
+import { MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { assets } from '../../data/assets';
+import { Logo } from '../ui/Logo';
+
+const categoryLinks = ['Figure', 'Mange i manhwe', 'Trading Card Game', 'Funko POP!', 'Blind Box', 'Plišane igračke'];
+const supportLinks = ['O nama', 'Plaćanje i dostava', 'Uvjeti korištenja', 'Pravila privatnosti', 'Povrati i reklamacije'];
+
+export function Footer() {
+  return <footer className="bg-white"><div className="page grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.1fr] lg:py-16"><div><Logo/><p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">Hrvatski webshop za anime, mange, kolekcionarske figure i Trading Card Game proizvode.</p><div className="mt-5 flex gap-2"><a href="https://wa.me/385916166209" target="_blank" rel="noreferrer" className="icon-button" aria-label="WhatsApp"><MessageCircle/></a></div></div><div><h3 className="footer-title">Kategorije</h3><ul className="footer-list">{categoryLinks.map((item)=><li key={item}><Link to="/shop">{item}</Link></li>)}</ul></div><div><h3 className="footer-title">Podrška</h3><ul className="footer-list">{supportLinks.map((item)=><li key={item}><Link to="/informacije">{item}</Link></li>)}</ul></div><div><h3 className="footer-title">Kontakt</h3><ul className="space-y-3 text-sm text-muted"><li><a className="flex items-center gap-2 hover:text-brand-700" href="tel:+385916166209"><Phone className="h-4 w-4"/>091/616-6209</a></li><li><a className="flex items-center gap-2 hover:text-brand-700" href="https://wa.me/385916166209" target="_blank" rel="noreferrer"><MessageCircle className="h-4 w-4"/>WhatsApp</a></li><li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0"/>Westgate Shopping City, Zaprešić</li></ul><div className="mt-5"><div className="mb-2 text-xs font-semibold text-muted">Podržani načini plaćanja</div><img src={assets.payments} alt="Podržani načini plaćanja" loading="lazy" className="h-8 max-w-full object-contain object-left"/></div></div></div><div className="border-t border-line"><div className="page flex flex-col gap-2 py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between"><span>dabas EST. 2023 · © 2026. Sva prava pridržana.</span><span>Redizajn prototip · Lokalni mock podaci</span></div></div></footer>;
+}
